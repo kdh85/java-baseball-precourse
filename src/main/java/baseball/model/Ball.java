@@ -17,6 +17,18 @@ public class Ball {
 		this.ballPosition = ballPosition;
 	}
 
+	public BallType pitchResult(Ball targetBall) {
+		if (this.equals(targetBall)) {
+			return BallType.STRIKE;
+		}
+
+		if (this.ballNumber.isSameBallNumber(targetBall.ballNumber)) {
+			return BallType.BALL;
+		}
+
+		return BallType.NOTHING;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)
@@ -40,4 +52,5 @@ public class Ball {
 			", ballPosition=" + ballPosition +
 			'}';
 	}
+
 }
