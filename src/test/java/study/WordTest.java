@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 class WordTest {
 
@@ -22,5 +24,21 @@ class WordTest {
 	void substringTest() {
 		Word word = new Word("(1,2)");
 		assertThat(word.substringWord()).isEqualTo("1,2");
+	}
+
+	@DisplayName("abc 문자열에서 특정 위치의 인덱스를 주입하여 해당 인덱스에 해당하는 글자를 반환하는지 확인한다.")
+	@ParameterizedTest
+	@CsvSource(value = {"0,'a'", "1,'b'", "2,'c'"})
+	void chatAtTest(int index, char word) {
+		Word abc = new Word("abc");
+		assertThat(abc.getWordByIndex(index)).isEqualTo(word);
+	}
+
+	@DisplayName("abc 문자열에서 길이값을 벗어나는 인덱스를 주입하면 에러가 발생하는지 확인한다.")
+	@Test
+	void validationChatAtTest() {
+		assertThatThrownBy(
+			() -> new Word("abc").getWordByIndex(4)
+		).isInstanceOf(StringIndexOutOfBoundsException.class);
 	}
 }
