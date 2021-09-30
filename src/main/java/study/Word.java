@@ -14,11 +14,15 @@ public class Word {
 		this.word = word;
 	}
 
-	public List<String> splitWord(final String splitMark){
+	public List<String> splitWord(final String splitMark) {
 		return Arrays.asList(word.split(splitMark));
 	}
 
 	public String substringWord() {
 		return word.substring(START_INDEX, END_INDEX);
+	}
+
+	public char getWordByIndex(int index) {
+		return word.charAt(index);
 	}
 }
