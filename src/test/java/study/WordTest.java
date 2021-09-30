@@ -16,4 +16,11 @@ class WordTest {
 			() -> assertThat(new Word("1").splitWord(",")).containsExactly("1")
 		);
 	}
+
+	@DisplayName("(1,2) 문자열 정보에서 (, ) 를 제거하고 1,2를 반환받는지 획인한다.")
+	@Test
+	void substringTest() {
+		Word word = new Word("(1,2)");
+		assertThat(word.substringWord()).isEqualTo("1,2");
+	}
 }
