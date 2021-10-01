@@ -54,7 +54,7 @@ public class Balls {
 	}
 
 	private boolean isStrikeOrBall(Ball targetBall, Ball ball) {
-		return !ball.pitchResult(targetBall).equals(BallType.NOTHING);
+		return !ball.pitchResult(targetBall).isNothing();
 	}
 
 	public List<BallType> matchThreeBalls(Balls targetBalls) {
