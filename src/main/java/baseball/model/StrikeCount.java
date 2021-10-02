@@ -21,7 +21,7 @@ public class StrikeCount {
 		return strikeCount;
 	}
 
-	public boolean isThreeStrikeOut(){
+	public boolean isThreeStrikeOut() {
 		return strikeCount == OUT_COUNT;
 	}
 
