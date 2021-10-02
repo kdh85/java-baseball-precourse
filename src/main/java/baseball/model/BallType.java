@@ -1,7 +1,7 @@
 package baseball.model;
 
 public enum BallType {
-	NOTHING, BALL, STRIKE;
+	STRIKE, BALL, NOTHING;
 
 	public boolean isStrike() {
 		return this.equals(STRIKE);
