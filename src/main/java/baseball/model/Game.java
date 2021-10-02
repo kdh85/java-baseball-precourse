@@ -33,7 +33,7 @@ public class Game {
 		return false;
 	}
 
-	private void clearGameResult() {
+	public void clearGameResult() {
 		gameResult.clearBallCount();
 	}
 
@@ -41,10 +41,15 @@ public class Game {
 		return gameResult.isGameEnd();
 	}
 
-	public LinkedHashMap<BallType, Integer> play(final String numbers){
-		clearGameResult();
-		Balls userBalls = new Balls(NumberGenerator.manualNumberGenerator(numbers));
-		gameResult.calculateScore(comBalls.matchThreeBalls(userBalls));
+	public LinkedHashMap<BallType, Integer> playResult(){
 		return gameResult.pitchResult();
+	}
+
+	public void play(String numbers) {
+		gameResult.calculateScore(comBalls.matchThreeBalls(createUserBalls(numbers)));
+	}
+
+	private Balls createUserBalls(String numbers) {
+		return new Balls(NumberGenerator.manualNumberGenerator(numbers));
 	}
 }
