@@ -77,6 +77,11 @@ public class GameResult {
 		return strikeCount.isThreeStrikeOut();
 	}
 
+	public void clearBallCount() {
+		strikeCount.resetCount();
+		ballCount.resetCount();
+	}
+	
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)
