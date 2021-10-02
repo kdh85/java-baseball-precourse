@@ -7,6 +7,8 @@ import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import baseball.util.NumberGenerator;
+
 class NumberGeneratorTest {
 
 	@DisplayName("랜덤으로 생성한 중복없는 숫자 3개를 반환한다.")
