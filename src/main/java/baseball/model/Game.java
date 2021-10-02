@@ -3,13 +3,10 @@ package baseball.model;
 import java.util.LinkedHashMap;
 
 import baseball.util.NumberGenerator;
-import baseball.view.RunningView;
 
 public class Game {
 
 	private static final int RESTART_MODE = 1;
-	private static final int LIMIT_INSERT_NUMBER_SIZE = 1;
-	private static final String NUMBER_PATTERN = "^[1-2]*$";
 
 	private final Balls comBalls;
 
@@ -20,15 +17,11 @@ public class Game {
 		this.gameResult = new GameResult();
 	}
 
-	private boolean isGameRestart(final String modeNumber){
-		if(modeNumber.length() != LIMIT_INSERT_NUMBER_SIZE || !modeNumber.matches(NUMBER_PATTERN)){
-			RunningView.printWrongValue();
-			return true;
-		}
-		return RESTART_MODE == Integer.parseInt(modeNumber);
+	private boolean isGameRestart(final int modeNumber){
+		return RESTART_MODE == modeNumber;
 	}
 
-	public boolean restartGame(final String modeNumber){
+	public boolean isContinueGame(final int modeNumber){
 		if(isGameRestart(modeNumber)){
 			clearGameResult();
 			return true;
