@@ -6,6 +6,7 @@ public class StrikeCount {
 
 	private static final int INCREASE_COUNT = 1;
 	private static final int OUT_COUNT = 3;
+	private static final int DEFAULT_COUNT = 0;
 
 	private int strikeCount;
 
@@ -23,6 +24,10 @@ public class StrikeCount {
 
 	public boolean isThreeStrikeOut() {
 		return strikeCount == OUT_COUNT;
+	}
+
+	public void resetCount() {
+		strikeCount = DEFAULT_COUNT;
 	}
 
 	@Override
@@ -46,5 +51,4 @@ public class StrikeCount {
 			"strikeCount=" + strikeCount +
 			'}';
 	}
-
 }

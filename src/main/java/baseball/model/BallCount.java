@@ -5,6 +5,7 @@ import java.util.Objects;
 public class BallCount {
 
 	private static final int INCREASE_COUNT = 1;
+	private static final int DEFAULT_COUNT = 0;
 
 	private int ballCount;
 
@@ -18,6 +19,10 @@ public class BallCount {
 
 	public Integer count(){
 		return ballCount;
+	}
+
+	public void resetCount() {
+		ballCount = DEFAULT_COUNT;
 	}
 
 	@Override
@@ -41,4 +46,5 @@ public class BallCount {
 			"ballCount=" + ballCount +
 			'}';
 	}
+
 }
