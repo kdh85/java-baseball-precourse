@@ -42,4 +42,20 @@ class GameResultTest {
 			()->assertThat(notFinish.isGameEnd()).isFalse()
 		);
 	}
+
+	@DisplayName("결과 집계 후 볼카운트를 초기화 한다.")
+	@Test
+	void resetScoreTest() {
+		List<BallType> ballTypes = Arrays.asList(BallType.STRIKE, BallType.BALL, BallType.NOTHING);
+		GameResult gameResult = new GameResult();
+		gameResult.calculateScore(ballTypes);
+		gameResult.clearBallCount();
+
+		Map<BallType, Integer> ballTypeIntegerMap = gameResult.pitchResult();
+		assertAll(
+			() -> assertThat(ballTypeIntegerMap.get(BallType.STRIKE)).isEqualTo(0),
+			() -> assertThat(ballTypeIntegerMap.get(BallType.BALL)).isEqualTo(0),
+			() -> assertThat(ballTypeIntegerMap.get(BallType.NOTHING)).isEqualTo(3)
+		);
+	}
 }
