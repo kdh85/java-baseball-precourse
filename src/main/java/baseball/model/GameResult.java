@@ -1,6 +1,6 @@
 package baseball.model;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -39,9 +39,9 @@ public class GameResult {
 		}
 	}
 
-	public Map<BallType, Integer> pitchResult() {
+	public LinkedHashMap<BallType, Integer> pitchResult() {
 
-		Map<BallType, Integer> result = new HashMap<>();
+		LinkedHashMap<BallType, Integer> result = new LinkedHashMap<>();
 
 		for (BallType value : BallType.values()) {
 			addStrike(result, value);
