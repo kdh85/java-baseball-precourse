@@ -12,7 +12,7 @@ class GameTest {
 	@DisplayName("입력값 1,2를 받아서 재시작 여부를 반환한다.")
 	@ParameterizedTest
 	@CsvSource(value = {"1|true", "2|false"}, delimiter = '|')
-	void isContinueGameTest(int mode, boolean isRestart) {
+	void isContinueGameTest(String mode, boolean isRestart) {
 		Game game = new Game();
 		assertThat(game.isContinueGame(mode)).isEqualTo(isRestart);
 	}

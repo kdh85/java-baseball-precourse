@@ -17,11 +17,15 @@ public class Game {
 		this.gameResult = new GameResult();
 	}
 
-	private boolean isGameRestart(final int modeNumber){
-		return RESTART_MODE == modeNumber;
+	private boolean isGameRestart(final String modeNumber){
+		return RESTART_MODE == toInt(modeNumber);
 	}
 
-	public boolean isContinueGame(final int modeNumber){
+	private int toInt(String modeNumber) {
+		return Integer.parseInt(modeNumber);
+	}
+
+	public boolean isContinueGame(final String modeNumber){
 		if(isGameRestart(modeNumber)){
 			clearGameResult();
 			return true;
