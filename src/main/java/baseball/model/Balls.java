@@ -2,6 +2,7 @@ package baseball.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -13,11 +14,11 @@ public class Balls {
 
 	private final List<Ball> balls;
 
-	public Balls(List<Integer> numbers) {
+	public Balls(LinkedList<Integer> numbers) {
 		this.balls = Collections.unmodifiableList(createBalls(numbers));
 	}
 
-	private List<Ball> createBalls(List<Integer> numbers) {
+	private List<Ball> createBalls(LinkedList<Integer> numbers) {
 		AtomicInteger atomicInteger = new AtomicInteger();
 
 		List<Ball> newBalls = new ArrayList<>();
