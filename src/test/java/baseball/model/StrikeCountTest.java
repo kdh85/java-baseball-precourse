@@ -39,4 +39,12 @@ class StrikeCountTest {
 		}
 		assertThat(strikeCount.isThreeStrikeOut()).isEqualTo(isOut);
 	}
+
+	@DisplayName("스트라이크 카운트가 초기화된다.")
+	@Test
+	void resetCount() {
+		strikeCount.increaseCount();
+		strikeCount.resetCount();
+		assertThat(strikeCount).isEqualTo(new StrikeCount(0));
+	}
 }

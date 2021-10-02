@@ -27,4 +27,12 @@ class BallCountTest {
 		ballCount.increaseCount();
 		assertThat(ballCount).isEqualTo(new BallCount(1));
 	}
+
+	@DisplayName("볼 카운트가 초기화된다.")
+	@Test
+	void resetCount() {
+		ballCount.increaseCount();
+		ballCount.resetCount();
+		assertThat(ballCount).isEqualTo(new BallCount(0));
+	}
 }
