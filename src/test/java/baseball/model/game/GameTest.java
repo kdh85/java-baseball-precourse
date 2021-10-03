@@ -1,4 +1,4 @@
-package baseball.model;
+package baseball.model.game;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.*;
 
@@ -6,6 +6,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import baseball.model.game.Game;
 
 class GameTest {
 

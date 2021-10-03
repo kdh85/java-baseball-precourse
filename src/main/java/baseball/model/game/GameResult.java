@@ -1,9 +1,14 @@
-package baseball.model;
+package baseball.model.game;
 
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+
+import baseball.model.count.BallCount;
+import baseball.model.ball.BallType;
+import baseball.model.count.Count;
+import baseball.model.count.StrikeCount;
 
 public class GameResult {
 

@@ -2,7 +2,7 @@ package baseball.view;
 
 import java.util.Map;
 
-import baseball.model.BallType;
+import baseball.model.ball.BallType;
 
 public class ResultView {
 

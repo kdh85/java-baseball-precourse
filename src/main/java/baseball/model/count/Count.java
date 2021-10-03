@@ -1,4 +1,4 @@
-package baseball.model;
+package baseball.model.count;
 
 public interface Count {
 

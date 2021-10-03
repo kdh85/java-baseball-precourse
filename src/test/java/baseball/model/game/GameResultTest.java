@@ -1,4 +1,4 @@
-package baseball.model;
+package baseball.model.game;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,6 +9,9 @@ import java.util.Map;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import baseball.model.ball.BallType;
+import baseball.model.game.GameResult;
 
 class GameResultTest {
 

@@ -1,10 +1,12 @@
-package baseball.model;
+package baseball.model.count;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import baseball.model.count.BallCount;
 
 class BallCountTest {
 

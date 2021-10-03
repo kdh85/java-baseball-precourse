@@ -1,4 +1,4 @@
-package baseball.model;
+package baseball.model.ball;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.*;
 
@@ -6,6 +6,9 @@ import java.util.Arrays;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import baseball.model.ball.Ball;
+import baseball.model.ball.BallType;
 
 class BallTypeTest {
 

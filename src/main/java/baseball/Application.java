@@ -1,7 +1,7 @@
 package baseball;
 
 import baseball.controller.BaseballController;
-import baseball.model.Game;
+import baseball.model.game.Game;
 import baseball.validation.BaseballMainValidation;
 import baseball.view.ResultView;
 

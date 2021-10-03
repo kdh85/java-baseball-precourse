@@ -1,10 +1,9 @@
 package baseball.controller;
 
 import java.util.LinkedHashMap;
-import java.util.Map;
 
-import baseball.model.BallType;
-import baseball.model.Game;
+import baseball.model.ball.BallType;
+import baseball.model.game.Game;
 import baseball.service.BallCreateService;
 
 public class BaseballController {

@@ -1,7 +1,9 @@
-package baseball.model;
+package baseball.model.game;
 
 import java.util.LinkedHashMap;
 
+import baseball.model.ball.BallType;
+import baseball.model.ball.Balls;
 import baseball.util.NumberGenerator;
 
 public class Game {

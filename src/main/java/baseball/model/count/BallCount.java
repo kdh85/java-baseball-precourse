@@ -1,8 +1,8 @@
-package baseball.model;
+package baseball.model.count;
 
 import java.util.Objects;
 
-public class BallCount implements Count{
+public class BallCount implements Count {
 
 	private static final int INCREASE_COUNT = 1;
 	private static final int DEFAULT_COUNT = 0;
