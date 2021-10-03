@@ -38,30 +38,6 @@ class BallsTest {
 		);
 	}
 
-	@DisplayName("생성된 공들을 상대로 공한개를 비교했을때 스트라이크가 반환된다.")
-	@Test
-	void matchBall_strikeTest() {
-		BallType matchResult = balls.matchOneBall(new Ball(2, 1));
-
-		assertThat(matchResult).isEqualTo(BallType.STRIKE);
-	}
-
-	@DisplayName("생성된 공들을 상대로 공한개를 비교했을때 볼 반환된다.")
-	@Test
-	void matchBall_ballTest() {
-		BallType matchResult = balls.matchOneBall(new Ball(2, 2));
-
-		assertThat(matchResult).isEqualTo(BallType.BALL);
-	}
-
-	@DisplayName("생성된 공들을 상대로 공한개를 비교했을때 낫싱이 반환된다.")
-	@Test
-	void matchBall_nothingTest() {
-		BallType matchResult = balls.matchOneBall(new Ball(4, 1));
-
-		assertThat(matchResult).isEqualTo(BallType.NOTHING);
-	}
-
 	@DisplayName("생성된 공들을 상대로 공3개를 비교해서 전체 볼 판정을 반환받는다.")
 	@Test
 	void matchThreeBalls() {
