@@ -37,32 +37,11 @@ public class Balls {
 		}
 	}
 
-	public BallType matchOneBall(Ball targetBall) {
-
-		BallType resultBallType = BallType.NOTHING;
-
-		for (Ball ball : balls) {
-			resultBallType = strikeOrBall(targetBall, resultBallType, ball);
-		}
-		return resultBallType;
-	}
-
-	private BallType strikeOrBall(Ball targetBall, BallType resultBallType, Ball ball) {
-		if(isStrikeOrBall(targetBall, ball)){
-			resultBallType = ball.pitchResult(targetBall);
-		}
-		return resultBallType;
-	}
-
-	private boolean isStrikeOrBall(Ball targetBall, Ball ball) {
-		return !ball.pitchResult(targetBall).isNothing();
-	}
-
 	public List<BallType> matchThreeBalls(Balls targetBalls) {
 		List<BallType> results = new ArrayList<>();
 
 		for (Ball targetBall : targetBalls.balls) {
-			results.add(this.matchOneBall(targetBall));
+			results.add(BallType.ballsDistinction(balls, targetBall));
 		}
 
 		return results;
