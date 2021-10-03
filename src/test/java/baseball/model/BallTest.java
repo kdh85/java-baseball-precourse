@@ -21,8 +21,15 @@ class BallTest {
 	@ParameterizedTest
 	@CsvSource(value = {"1|0|true", "2|0|false", "1|1|false"}, delimiter = '|')
 	void createBallTest(int number, int otherNumber, boolean isSame) {
-		assertThat(ball.equals(new Ball(number, otherNumber))).isEqualTo(isSame);
+		assertThat(ball.isSameBall(new Ball(number, otherNumber))).isEqualTo(isSame);
 	}
+
+	@DisplayName("볼넘버만 같은 지를 확인한다.")
+	@Test
+	void isSameNumberTest() {
+		assertThat(ball.isSameNumber(new Ball(1, 1))).isTrue();
+	}
+
 	@DisplayName("볼을 비교하여 같으면 스트라이크를 반환한다.")
 	@Test
 	void pitchResult_nothing_Test() {
