@@ -18,15 +18,15 @@ public class Ball {
 	}
 
 	public BallType pitchResult(Ball targetBall) {
-		if (this.equals(targetBall)) {
-			return BallType.STRIKE;
-		}
+		return BallType.ballDistinction(this, targetBall);
+	}
 
-		if (this.ballNumber.isSameBallNumber(targetBall.ballNumber)) {
-			return BallType.BALL;
-		}
+	public boolean isSameNumber(Ball userBall) {
+		return this.ballNumber.isSameBallNumber(userBall.ballNumber);
+	}
 
-		return BallType.NOTHING;
+	public boolean isSameBall(Ball userBall) {
+		return this.equals(userBall);
 	}
 
 	@Override
@@ -52,5 +52,4 @@ public class Ball {
 			", ballPosition=" + ballPosition +
 			'}';
 	}
-
 }
