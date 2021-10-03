@@ -10,9 +10,9 @@ public class GameResult {
 	private static final int MAX_BALL_COUNT = 3;
 	private static final int DEFAULT_COUNT = 0;
 
-	private final StrikeCount strikeCount;
+	private final Count strikeCount;
 
-	private final BallCount ballCount;
+	private final Count ballCount;
 
 	public GameResult() {
 		this.strikeCount = new StrikeCount(DEFAULT_COUNT);

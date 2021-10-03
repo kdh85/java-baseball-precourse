@@ -2,7 +2,7 @@ package baseball.model;
 
 import java.util.Objects;
 
-public class BallCount {
+public class BallCount implements Count{
 
 	private static final int INCREASE_COUNT = 1;
 	private static final int DEFAULT_COUNT = 0;
@@ -13,16 +13,24 @@ public class BallCount {
 		this.ballCount = ballCount;
 	}
 
+	@Override
 	public void increaseCount(){
 		ballCount += INCREASE_COUNT;
 	}
 
-	public Integer count(){
+	@Override
+	public int count(){
 		return ballCount;
 	}
 
+	@Override
 	public void resetCount() {
 		ballCount = DEFAULT_COUNT;
+	}
+
+	@Override
+	public boolean isThreeStrikeOut() {
+		return false;
 	}
 
 	@Override
