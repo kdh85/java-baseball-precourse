@@ -14,12 +14,12 @@ public class BallCount implements Count {
 	}
 
 	@Override
-	public void increaseCount(){
+	public void increaseCount() {
 		ballCount += INCREASE_COUNT;
 	}
 
 	@Override
-	public int count(){
+	public int count() {
 		return ballCount;
 	}
 

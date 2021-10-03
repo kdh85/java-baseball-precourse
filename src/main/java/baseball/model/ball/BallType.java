@@ -30,7 +30,7 @@ public enum BallType {
 		return NOTHING;
 	}
 
-	public static BallType ballsDistinction(final List<Ball> computerBalls, final Ball userBall){
+	public static BallType ballsDistinction(final List<Ball> computerBalls, final Ball userBall) {
 
 		BallType type = NOTHING;
 
@@ -43,7 +43,7 @@ public enum BallType {
 
 	private static BallType getStrikeOrBall(Ball userBall, BallType type, Ball computerBall) {
 		BallType ballType = ballDistinction(computerBall, userBall);
-		if(!ballType.isNothing()){
+		if (!ballType.isNothing()) {
 			type = ballType;
 		}
 		return type;

@@ -2,7 +2,7 @@ package baseball.model.count;
 
 import java.util.Objects;
 
-public class StrikeCount implements Count{
+public class StrikeCount implements Count {
 
 	private static final int INCREASE_COUNT = 1;
 	private static final int OUT_COUNT = 3;

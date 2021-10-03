@@ -19,7 +19,7 @@ public class Game {
 		this.gameResult = new GameResult();
 	}
 
-	private boolean isGameRestart(final String modeNumber){
+	private boolean isGameRestart(final String modeNumber) {
 		return RESTART_MODE == toInt(modeNumber);
 	}
 
@@ -27,8 +27,8 @@ public class Game {
 		return Integer.parseInt(modeNumber);
 	}
 
-	public boolean isContinueGame(final String modeNumber){
-		if(isGameRestart(modeNumber)){
+	public boolean isContinueGame(final String modeNumber) {
+		if (isGameRestart(modeNumber)) {
 			clearGameResult();
 			return true;
 		}
@@ -39,11 +39,11 @@ public class Game {
 		gameResult.clearBallCount();
 	}
 
-	public boolean isGameEnd(){
+	public boolean isGameEnd() {
 		return gameResult.isGameEnd();
 	}
 
-	public LinkedHashMap<BallType, Integer> playResult(){
+	public LinkedHashMap<BallType, Integer> playResult() {
 		return gameResult.pitchResult();
 	}
 

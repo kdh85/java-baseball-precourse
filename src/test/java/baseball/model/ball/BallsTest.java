@@ -11,9 +11,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import baseball.model.ball.BallType;
-import baseball.model.ball.Balls;
-
 class BallsTest {
 
 	private Balls balls;
