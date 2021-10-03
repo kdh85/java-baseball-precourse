@@ -8,12 +8,12 @@ public class Game {
 
 	private static final int RESTART_MODE = 1;
 
-	private final Balls comBalls;
+	private final Balls computerBalls;
 
 	private final GameResult gameResult;
 
 	public Game() {
-		this.comBalls = new Balls(NumberGenerator.autoNumberGenerator());
+		this.computerBalls = new Balls(NumberGenerator.autoNumberGenerator());
 		this.gameResult = new GameResult();
 	}
 
@@ -46,7 +46,7 @@ public class Game {
 	}
 
 	public void play(String numbers) {
-		gameResult.calculateScore(comBalls.matchThreeBalls(createUserBalls(numbers)));
+		gameResult.calculateScore(computerBalls.matchThreeBalls(createUserBalls(numbers)));
 	}
 
 	private Balls createUserBalls(String numbers) {
