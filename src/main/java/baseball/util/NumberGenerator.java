@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import baseball.exception.NumberValueException;
 import nextstep.utils.Randoms;
 
 public class NumberGenerator {
@@ -48,7 +49,7 @@ public class NumberGenerator {
 
 	private static void validationManualNumbers(Set<Integer> numberSet) {
 		if (numberSet.size() != LIMIT_NUMBER_SIZE) {
-			throw new IllegalArgumentException(MSG_ERROR_NOT_ENOUGH_NUMBER);
+			throw new NumberValueException(MSG_ERROR_NOT_ENOUGH_NUMBER);
 		}
 	}
 

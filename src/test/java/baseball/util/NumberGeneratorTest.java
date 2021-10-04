@@ -7,7 +7,7 @@ import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import baseball.util.NumberGenerator;
+import baseball.exception.NumberValueException;
 
 class NumberGeneratorTest {
 
@@ -30,6 +30,6 @@ class NumberGeneratorTest {
 	void duplicateTest() {
 		assertThatThrownBy(
 			() -> NumberGenerator.manualNumberGenerator("113")
-		).isInstanceOf(IllegalArgumentException.class);
+		).isInstanceOf(NumberValueException.class);
 	}
 }
