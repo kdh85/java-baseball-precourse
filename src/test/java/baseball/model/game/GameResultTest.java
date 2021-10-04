@@ -5,13 +5,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import baseball.model.ball.BallType;
-import baseball.model.game.GameResult;
+import baseball.model.game.dto.GameResultDto;
 
 class GameResultTest {
 
@@ -22,11 +21,12 @@ class GameResultTest {
 		GameResult gameResult = new GameResult();
 		gameResult.calculateScore(ballTypes);
 
-		Map<BallType, Integer> ballTypeIntegerMap = gameResult.pitchResult();
+		GameResultDto gameResultDto = gameResult.pitchResult();
+
 		assertAll(
-			() -> assertThat(ballTypeIntegerMap.get(BallType.STRIKE)).isEqualTo(1),
-			() -> assertThat(ballTypeIntegerMap.get(BallType.BALL)).isEqualTo(1),
-			() -> assertThat(ballTypeIntegerMap.get(BallType.NOTHING)).isEqualTo(1)
+			() -> assertThat(gameResultDto.getGameResultDtoStrikeCount()).isEqualTo(1),
+			() -> assertThat(gameResultDto.getGameResultDtoBallCount()).isEqualTo(1),
+			() -> assertThat(gameResultDto.getGameResultDtoNothingCount()).isEqualTo(1)
 		);
 	}
 
@@ -41,8 +41,8 @@ class GameResultTest {
 		notFinish.calculateScore(Arrays.asList(BallType.STRIKE, BallType.BALL, BallType.STRIKE));
 
 		assertAll(
-			()->assertThat(finish.isGameEnd()).isTrue(),
-			()->assertThat(notFinish.isGameEnd()).isFalse()
+			() -> assertThat(finish.isGameEnd()).isTrue(),
+			() -> assertThat(notFinish.isGameEnd()).isFalse()
 		);
 	}
 
@@ -54,11 +54,12 @@ class GameResultTest {
 		gameResult.calculateScore(ballTypes);
 		gameResult.clearBallCount();
 
-		Map<BallType, Integer> ballTypeIntegerMap = gameResult.pitchResult();
+		GameResultDto gameResultDto = gameResult.pitchResult();
+
 		assertAll(
-			() -> assertThat(ballTypeIntegerMap.get(BallType.STRIKE)).isEqualTo(0),
-			() -> assertThat(ballTypeIntegerMap.get(BallType.BALL)).isEqualTo(0),
-			() -> assertThat(ballTypeIntegerMap.get(BallType.NOTHING)).isEqualTo(3)
+			() -> assertThat(gameResultDto.getGameResultDtoStrikeCount()).isEqualTo(0),
+			() -> assertThat(gameResultDto.getGameResultDtoBallCount()).isEqualTo(0),
+			() -> assertThat(gameResultDto.getGameResultDtoNothingCount()).isEqualTo(3)
 		);
 	}
 }

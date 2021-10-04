@@ -9,6 +9,7 @@ import baseball.model.ball.BallType;
 import baseball.model.count.BallCount;
 import baseball.model.count.Count;
 import baseball.model.count.StrikeCount;
+import baseball.model.game.dto.GameResultDto;
 
 public class GameResult {
 
@@ -44,7 +45,7 @@ public class GameResult {
 		}
 	}
 
-	public LinkedHashMap<BallType, Integer> pitchResult() {
+	public GameResultDto pitchResult() {
 
 		LinkedHashMap<BallType, Integer> result = new LinkedHashMap<>();
 
@@ -53,7 +54,7 @@ public class GameResult {
 			addBall(result, value);
 			addNothing(result, value);
 		}
-		return result;
+		return GameResultDto.from(result);
 	}
 
 	private void addNothing(Map<BallType, Integer> result, BallType value) {

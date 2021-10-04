@@ -1,9 +1,7 @@
 package baseball.controller;
 
-import java.util.LinkedHashMap;
-
-import baseball.model.ball.BallType;
 import baseball.model.game.Game;
+import baseball.model.game.dto.GameResultDto;
 import baseball.service.BallCreateService;
 
 public class BaseballController {
@@ -14,7 +12,7 @@ public class BaseballController {
 		this.ballCreateService = new BallCreateService();
 	}
 
-	public LinkedHashMap<BallType, Integer> play(final String numbers, final Game game) {
+	public GameResultDto play(final String numbers, final Game game) {
 		return ballCreateService.playResult(numbers, game);
 	}
 }

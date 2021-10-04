@@ -1,9 +1,7 @@
 package baseball.model.game;
 
-import java.util.LinkedHashMap;
-
-import baseball.model.ball.BallType;
 import baseball.model.ball.Balls;
+import baseball.model.game.dto.GameResultDto;
 import baseball.util.NumberGenerator;
 
 public class Game {
@@ -43,7 +41,7 @@ public class Game {
 		return gameResult.isGameEnd();
 	}
 
-	public LinkedHashMap<BallType, Integer> playResult() {
+	public GameResultDto playResult() {
 		return gameResult.pitchResult();
 	}
 
