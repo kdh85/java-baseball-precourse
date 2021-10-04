@@ -8,7 +8,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import baseball.model.ball.BallPosition;
+import baseball.exception.PositionValueException;
 
 class BallPositionTest {
 
@@ -32,6 +32,6 @@ class BallPositionTest {
 	void validationPositionTest(int number) {
 		assertThatThrownBy(
 			() -> new BallPosition(number)
-		).isInstanceOf(IllegalArgumentException.class);
+		).isInstanceOf(PositionValueException.class);
 	}
 }

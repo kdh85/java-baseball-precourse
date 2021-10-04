@@ -2,6 +2,8 @@ package baseball.model.ball;
 
 import java.util.Objects;
 
+import baseball.exception.PositionValueException;
+
 public class BallPosition {
 
 	private static final String MSG_ERROR_BALL_POSITION = "0~2사이의 정수를 사용해 주세요.";
@@ -12,7 +14,7 @@ public class BallPosition {
 
 	public BallPosition(final int position) {
 		if (position > MAX_BALL_POSITION || position < MIN_BALL_POSITION) {
-			throw new IllegalArgumentException(MSG_ERROR_BALL_POSITION);
+			throw new PositionValueException(MSG_ERROR_BALL_POSITION);
 		}
 		this.position = position;
 	}
