@@ -2,6 +2,8 @@ package baseball.model.ball;
 
 import java.util.Objects;
 
+import baseball.exception.BallNumberValueException;
+
 public class BallNumber {
 
 	private static final String MSG_ERROR_BALL_NUMBER = "1~9사이의 자연수를 입력해 주세요.";
@@ -12,7 +14,7 @@ public class BallNumber {
 
 	public BallNumber(final int ballNumber) {
 		if (ballNumber > MAX_BALL_NUMBER || ballNumber < MIN_BALL_NUMBER) {
-			throw new IllegalArgumentException(MSG_ERROR_BALL_NUMBER);
+			throw new BallNumberValueException(MSG_ERROR_BALL_NUMBER);
 		}
 		this.ballNumber = ballNumber;
 	}

@@ -8,7 +8,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import baseball.model.ball.BallNumber;
+import baseball.exception.BallNumberValueException;
 
 class BallNumberTest {
 
@@ -32,7 +32,7 @@ class BallNumberTest {
 	void validationBallNumberTest(int number) {
 		assertThatThrownBy(
 			() -> new BallNumber(number)
-		).isInstanceOf(IllegalArgumentException.class);
+		).isInstanceOf(BallNumberValueException.class);
 	}
 
 	@DisplayName("볼넘버 객체간에 비교를 통해 동일여부를 반환한다.")
