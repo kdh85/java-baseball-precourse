@@ -21,10 +21,13 @@ public class GameResult {
 	private final Count ballCount;
 
 	public GameResult() {
-		this.strikeCount = new StrikeCount(DEFAULT_COUNT);
-		this.ballCount = new BallCount(DEFAULT_COUNT);
+		this(new StrikeCount(DEFAULT_COUNT), new BallCount(DEFAULT_COUNT));
 	}
 
+	public GameResult(Count strikeCount, Count ballCount) {
+		this.strikeCount = strikeCount;
+		this.ballCount = ballCount;
+	}
 	public void calculateScore(final List<BallType> ballTypes) {
 
 		for (BallType ballType : ballTypes) {
