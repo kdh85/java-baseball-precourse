@@ -13,8 +13,12 @@ public class Game {
 	private final GameResult gameResult;
 
 	public Game() {
-		this.computerBalls = new Balls(NumberGenerator.autoNumberGenerator());
-		this.gameResult = new GameResult();
+		this(new Balls(NumberGenerator.autoNumberGenerator()), new GameResult());
+	}
+
+	public Game(Balls computerBalls, GameResult gameResult) {
+		this.computerBalls = computerBalls;
+		this.gameResult = gameResult;
 	}
 
 	private boolean isGameRestart(final String modeNumber) {
