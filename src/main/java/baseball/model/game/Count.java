@@ -1,4 +1,4 @@
-package baseball.model.count;
+package baseball.model.game;
 
 public interface Count {
 

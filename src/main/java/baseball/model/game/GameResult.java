@@ -7,7 +7,6 @@ import java.util.Objects;
 
 import baseball.model.ball.BallType;
 import baseball.model.count.BallCount;
-import baseball.model.count.Count;
 import baseball.model.count.StrikeCount;
 import baseball.model.game.dto.GameResultDto;
 
